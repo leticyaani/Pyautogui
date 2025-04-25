@@ -1,0 +1,98 @@
+import pyautogui
+import time
+import webbrowser
+import os
+
+# Caminho para o arquivo HTML
+caminho_arquivo = "C:/Users/letic/Downloads/3000/3000/3000/index.html"
+webbrowser.open(f"file:///{os.path.abspath(caminho_arquivo)}")
+
+# Aguarda 3 segundos para garantir que a página tenha carregado
+time.sleep(2)
+
+# Coordenadas do campo de entrada onde "Joana" será digitado
+campo_x1, campo_y1 = 389, 371  # Primeira posição
+
+# Move o mouse até a posição (389, 371) com uma duração de 1 segundo
+pyautogui.moveTo(campo_x1, campo_y1, duration=1)
+
+# Aguarda brevemente após mover o mouse
+time.sleep(0.3)
+
+# Clica nas coordenadas (389, 371)
+pyautogui.click()
+
+# Aguarda brevemente após o clique
+time.sleep(0.3)
+
+# Digita "Joana" no campo de texto com intervalos entre os caracteres
+pyautogui.write("Joana", interval=0.1)
+
+# Aguarda brevemente após digitar
+time.sleep(0.5)  # Pausa maior para garantir que a digitação seja concluída
+
+# Coordenadas para o segundo clique (332, 442)
+campo_x2, campo_y2 = 332, 442  # Segunda posição
+
+# Move o mouse até a posição (332, 442) com duração de 1 segundo
+pyautogui.moveTo(campo_x2, campo_y2, duration=2)  # Aumentei a duração para garantir que o movimento seja suave
+
+# Aguarda brevemente após mover o mouse
+time.sleep(0.5)
+
+# Clica nas coordenadas (332, 442)
+pyautogui.click()
+
+# Aguarda brevemente após o clique
+time.sleep(0.5)  # Pausa maior após o clique para garantir que a ação seja registrada
+
+# Coordenadas para o terceiro clique (1196, 245) - nova coordenada
+campo_x3, campo_y3 = 1196, 245  # Terceira posição
+
+# Move o mouse até a posição (1196, 245) com duração de 3 segundos para movimento mais devagar
+pyautogui.moveTo(campo_x3, campo_y3, duration=1)
+
+# Aguarda brevemente após mover o mouse
+time.sleep(0.5)
+
+# Clica nas coordenadas (1196, 245)
+pyautogui.click()
+
+# Aguarda 3 segundos para garantir que a página tenha carregado
+time.sleep(0.5)
+
+# Coordenadas do campo de entrada onde "Joana" será digitado
+campo_x1, campo_y1 = 389, 371  # Primeira posição
+
+# Move o mouse até a posição (389, 371) com uma duração de 1 segundo
+pyautogui.moveTo(campo_x1, campo_y1, duration=1)
+
+# Aguarda brevemente após mover o mouse
+time.sleep(0.5)
+
+# Clica nas coordenadas (389, 371)
+pyautogui.click()
+
+# Aguarda brevemente após o clique
+time.sleep(0.5)
+
+# Digita "Jo@" no campo de texto com intervalos entre os caracteres
+pyautogui.write("Jo@", interval=0.1)
+
+# Aguarda brevemente após digitar
+time.sleep(1)  # Pausa maior para garantir que a digitação seja concluída
+
+# Coordenadas para o terceiro clique (1196, 245) - nova coordenada
+campo_x3, campo_y3 = 1196, 245  # Terceira posição
+
+# Move o mouse até a posição (1196, 245) com duração de 3 segundos para movimento mais devagar
+pyautogui.moveTo(campo_x3, campo_y3, duration=1)
+
+# Aguarda brevemente após mover o mouse
+time.sleep(0.5)
+
+pyautogui.click()
+
+time.sleep(1.0)
+
+pyautogui.click()
