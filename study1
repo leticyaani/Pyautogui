@@ -1,0 +1,19 @@
+import pyautogui
+import time
+import webbrowser
+import os
+
+//abrir pagina html 
+caminho_arquivo = "C:/Users/letic/Downloads/3000/3000/3000/index.html"
+webbrowser.open(f"file:///{os.path.abspath(caminho_arquivo)}")
+
+//descobrir a posição do local
+print(pyautogui.position())
+//Você tem 5 segundos para mover o mouse para o local desejado
+time.sleep(5)
+
+campo_x1, campo_y1 = 389, 371 //definir posição
+pyautogui.moveTo(campo_x1, campo_y1, duration=1) //vai se mover até o campo, duação vai ser a velocidade que se move
+pyautogui.click() //clicar onde o mouse se moveu
+
+//caso for caixa branca: pedir para Ia manter a mesma pagina depois que o formulario for enviado
