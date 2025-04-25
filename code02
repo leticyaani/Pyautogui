@@ -1,0 +1,60 @@
+import pyautogui
+import time
+import os
+
+# ATENÇÃO: CASO SEJA PRECISO ACHAR A POSIÇÃO DE ALGO NA TELA UTILIZAR O MOUSE COM O COMANDO ABAIXO
+# print(pyautogui.position())
+
+# ATENÇÃO: CASO SEJA NECESSARIO MOVER O MOUSE PARA ALGUM LUGAR DA TELA
+# pyautogui.moveTo(500, 300, duration=1)
+# pyautogui.click() 
+
+# tempo para executar um comando e evitar falha
+pyautogui.PAUSE = 1
+pyautogui.FAILSAFE = True
+
+# caminho para pasta downloads
+def caminho_downloads(nome_arquivo):
+    usuario = os.getlogin()
+    return f"C:\\Users\\{usuario}\\Downloads\\{nome_arquivo}"
+
+# função para iniciar o bloco de notas
+def abrir_bloco_de_notas():
+    pyautogui.press('win')
+    pyautogui.write('Bloco de Notas')
+    pyautogui.press('enter')
+
+# função para escrever
+def escrever_texto():
+    pyautogui.keyDown('shift') #deixa maiusculo
+    pyautogui.write("minha namorada eh a mulher mais linda do mundo!!!!!", interval=0.1)
+    pyautogui.hotkey('ctrl', 'a')
+    pyautogui.press('delete')
+    pyautogui.keyUp('shift') #deixa minusculo
+    pyautogui.write("te amo te amo te amo te amo te amo te amo te amo", interval=0.1)
+
+# função para salvar o arquivo
+def salvar_arquivo(nome_arquivo):
+    caminho = caminho_downloads(nome_arquivo)
+    pyautogui.hotkey("ctrl", "s")
+    time.sleep(1)
+    pyautogui.write(caminho, interval=0.1)
+    pyautogui.press("enter")
+    time.sleep(1)
+
+# função para tirar print
+def tirar_print():
+    screenshot = pyautogui.screenshot()
+    caminho = caminho_downloads("bloco_de_notas.png")
+    screenshot.save(caminho)
+
+# função principal
+def main():
+    abrir_bloco_de_notas()
+    escrever_texto()
+    salvar_arquivo("teste.txt")
+    tirar_print()
+    print("Processo finalizado!")
+
+if __name__ == "__main__":
+    main()
